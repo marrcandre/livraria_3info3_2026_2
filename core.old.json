@@ -1,0 +1,293 @@
+[
+{
+  "model": "core.autor",
+  "pk": 1,
+  "fields": {
+    "nome": "C. S. Lewis",
+    "email": "cslewis@oxford.uk"
+  }
+},
+{
+  "model": "core.autor",
+  "pk": 2,
+  "fields": {
+    "nome": "J. R. R. Tolkien",
+    "email": "jrrtolkien@oxford.uk"
+  }
+},
+{
+  "model": "core.autor",
+  "pk": 3,
+  "fields": {
+    "nome": "Agatha Christie",
+    "email": null
+  }
+},
+{
+  "model": "core.autor",
+  "pk": 6,
+  "fields": {
+    "nome": "Marco André Lopes Mendes",
+    "email": "marcoandre@gmail.com"
+  }
+},
+{
+  "model": "core.autor",
+  "pk": 7,
+  "fields": {
+    "nome": "Prof. Eduardo da Silva",
+    "email": "eduardo.silva@ifc.edu.br"
+  }
+},
+{
+  "model": "core.autor",
+  "pk": 8,
+  "fields": {
+    "nome": "Carlos Henrique Pereira Santos",
+    "email": "ifcarloshenrique@gmail.com"
+  }
+},
+{
+  "model": "core.categoria",
+  "pk": 1,
+  "fields": {
+    "descricao": "Fantasia"
+  }
+},
+{
+  "model": "core.categoria",
+  "pk": 2,
+  "fields": {
+    "descricao": "Policial"
+  }
+},
+{
+  "model": "core.categoria",
+  "pk": 3,
+  "fields": {
+    "descricao": "Suspense"
+  }
+},
+{
+  "model": "core.categoria",
+  "pk": 4,
+  "fields": {
+    "descricao": "Terror"
+  }
+},
+{
+  "model": "core.categoria",
+  "pk": 5,
+  "fields": {
+    "descricao": "Comédia"
+  }
+},
+{
+  "model": "core.categoria",
+  "pk": 6,
+  "fields": {
+    "descricao": "Redes"
+  }
+},
+{
+  "model": "core.categoria",
+  "pk": 8,
+  "fields": {
+    "descricao": "Engenharia de Software"
+  }
+},
+{
+  "model": "core.categoria",
+  "pk": 9,
+  "fields": {
+    "descricao": "Desenvolvimento Web"
+  }
+},
+{
+  "model": "core.editora",
+  "pk": 1,
+  "fields": {
+    "nome": "Novatec",
+    "site": "http://novatec.com.br"
+  }
+},
+{
+  "model": "core.editora",
+  "pk": 2,
+  "fields": {
+    "nome": "Record",
+    "site": "http://record.com.br"
+  }
+},
+{
+  "model": "core.editora",
+  "pk": 3,
+  "fields": {
+    "nome": "Alta Books",
+    "site": "http://altabooks.com.br"
+  }
+},
+{
+  "model": "core.editora",
+  "pk": 4,
+  "fields": {
+    "nome": "Dark Side",
+    "site": null
+  }
+},
+{
+  "model": "core.editora",
+  "pk": 5,
+  "fields": {
+    "nome": "Martins Fontes",
+    "site": "http://martinsfontes.com.br"
+  }
+},
+{
+  "model": "core.editora",
+  "pk": 6,
+  "fields": {
+    "nome": "Thomas Nelson",
+    "site": null
+  }
+},
+{
+  "model": "core.livro",
+  "pk": 1,
+  "fields": {
+    "titulo": "O Código Limpo",
+    "isbn": "3423857",
+    "quantidade": 12,
+    "preco": "12.00",
+    "categoria": 8,
+    "editora": 3,
+    "capa": null,
+    "autores": []
+  }
+},
+{
+  "model": "core.livro",
+  "pk": 2,
+  "fields": {
+    "titulo": "O Senhor dos Anéis",
+    "isbn": "8578881613",
+    "quantidade": 20,
+    "preco": "20.00",
+    "categoria": 1,
+    "editora": 6,
+    "capa": 1,
+    "autores": [
+      2
+    ]
+  }
+},
+{
+  "model": "core.livro",
+  "pk": 3,
+  "fields": {
+    "titulo": "O Codificador Limpo",
+    "isbn": "343525",
+    "quantidade": 2,
+    "preco": "2.00",
+    "categoria": 8,
+    "editora": 3,
+    "capa": null,
+    "autores": []
+  }
+},
+{
+  "model": "core.livro",
+  "pk": 4,
+  "fields": {
+    "titulo": "O Hobbit",
+    "isbn": "12123",
+    "quantidade": 34,
+    "preco": "23.00",
+    "categoria": 1,
+    "editora": 6,
+    "capa": 2,
+    "autores": [
+      2
+    ]
+  }
+},
+{
+  "model": "core.livro",
+  "pk": 5,
+  "fields": {
+    "titulo": "Django para Leigos",
+    "isbn": "3423857",
+    "quantidade": 10,
+    "preco": "1.99",
+    "categoria": 9,
+    "editora": 1,
+    "capa": null,
+    "autores": [
+      6,
+      7
+    ]
+  }
+},
+{
+  "model": "core.livro",
+  "pk": 6,
+  "fields": {
+    "titulo": "Crime e Castigo",
+    "isbn": "56567576576",
+    "quantidade": 10,
+    "preco": "20.00",
+    "categoria": 1,
+    "editora": 3,
+    "capa": null,
+    "autores": [
+      2
+    ]
+  }
+},
+{
+  "model": "core.livro",
+  "pk": 7,
+  "fields": {
+    "titulo": "Cai o pano",
+    "isbn": "",
+    "quantidade": 0,
+    "preco": "10.00",
+    "categoria": 2,
+    "editora": 3,
+    "capa": null,
+    "autores": [
+      3
+    ]
+  }
+},
+{
+  "model": "core.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$7WWh9s6jMzry2Gbnx30H8d$wIZzPnIKrhbOpBi0Ny25dtOcRoOK+ileRqPtzv+CUQk=",
+    "last_login": "2026-04-07T19:24:16.969Z",
+    "is_superuser": true,
+    "email": "a@a.com",
+    "name": "Superusuário",
+    "is_active": true,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$gDw2xQZgwFkYpidganQBRU$8lNQVIM3rCWmyLCdPM0a3pcSHLmLYRZfhg1/snempV0=",
+    "last_login": null,
+    "is_superuser": true,
+    "email": "marcoandre@gmail.com",
+    "name": "Marco André Lopes Mendes",
+    "is_active": true,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
