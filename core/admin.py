@@ -49,11 +49,12 @@ class LivroAdmin(ModelAdmin):
 class UserAdmin(BaseUserAdmin):
     """Define the admin pages for users."""
 
-    ordering = ['id']
-    list_display = ['email', 'name']
+    ordering = ('id',)
+    list_display = ('email', 'name')
+    search_fields = ('email', 'name', 'groups__name')
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        (_('Personal Info'), {'fields': ('name',)}),
+        (_('Personal Info'), {'fields': ('name', 'foto',)}),
         (
             _('Permissions'),
             {
@@ -79,6 +80,7 @@ class UserAdmin(BaseUserAdmin):
                     'password1',
                     'password2',
                     'name',
+                    'foto',
                     'is_active',
                     'is_staff',
                     'is_superuser',
