@@ -47,6 +47,7 @@ class CompraAdmin(ModelAdmin):
         """Exibe R$ 123,45 em vez de 123.45."""
         return f"R$ {obj.total:.2f}"
 
+
 @register(Editora)
 class EditoraAdmin(ModelAdmin):
     list_display = ('nome', 'email', 'cidade')
