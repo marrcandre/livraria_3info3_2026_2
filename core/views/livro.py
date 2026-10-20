@@ -1,6 +1,6 @@
 from django.db.models import Q, Sum
 from django_filters.rest_framework import DjangoFilterBackend
-from drf_spectacular.utils import OpenApiResponse, extend_schema
+from drf_spectacular.utils import OpenApiParameter, OpenApiResponse, OpenApiTypes, extend_schema
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.filters import OrderingFilter, SearchFilter
@@ -22,7 +22,12 @@ class LivroViewSet(ModelViewSet):
     queryset = Livro.objects.order_by('-id')
     serializer_class = LivroSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter, SearchFilter]
-    filterset_fields = ['categoria__descricao', 'editora__nome']
+    filterset_fields = {
+        'categoria__descricao': ['exact'],
+        'editora__nome': ['exact'],
+        'quantidade': ['exact', 'gte', 'lte'],
+        'preco': ['exact', 'gte', 'lte'],
+    }
     search_fields = ['titulo']
     ordering_fields = ['titulo', 'preco']
     ordering = ['titulo']
@@ -55,8 +60,8 @@ class LivroViewSet(ModelViewSet):
                     {"quantidade": "A quantidade em estoque não pode ser negativa."}
                 ]
             ),
-        },
-        )
+        }
+    )
     @action(detail=True, methods=['post'])
     def ajustar_estoque(self, request, pk=None):
         livro = self.get_object()
@@ -111,3 +116,26 @@ class LivroViewSet(ModelViewSet):
             )
 
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(
+                name='search',
+                type=OpenApiTypes.STR,
+                location=OpenApiParameter.QUERY,
+                description='Pesquisa livros pelo título.',
+            ),
+            OpenApiParameter(
+                name='ordering',
+                type=OpenApiTypes.STR,
+                location=OpenApiParameter.QUERY,
+                description=(
+                    'Campo de ordenação: titulo ou preco. '
+                    'Prefixe com "-" para ordem decrescente; '
+                    'por exemplo, -preco.'
+                ),
+            ),
+        ],
+    )
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
