@@ -86,6 +86,7 @@ class CompraCreateUpdateSerializer(ModelSerializer):
                 item['preco'] = item['livro'].preco
                 ItensCompra.objects.create(compra=compra, **item)
 
+        compra.save()
         return compra
 
     @transaction.atomic
